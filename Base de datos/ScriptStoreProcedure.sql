@@ -1,4 +1,4 @@
-----------------------------------STORED PROCEDURES M1-------------------------------------
+﻿----------------------------------STORED PROCEDURES M1-------------------------------------
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
@@ -25,7 +25,7 @@ CREATE procedure M1_ConsultarRolesUsuario
 	@nombre_usuario [varchar](25)
 as
 	begin
-		select roles.rol_id as id_rol, roles.rol_nombre as nombre
+		select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion
 		from ROL roles , PERSONA pers, PERSONA_ROL perol
 		where pers.per_id = perol.PERSONA_per_id AND perol.ROL_rol_id = roles.rol_id AND pers.per_nombre_usuario = @nombre_usuario
 	end;

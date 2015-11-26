@@ -1,33 +1,84 @@
+INSERT INTO  ROL VALUES ('Admin Sistema','El administrador tiene acceso a todo el sistema sin restricción,con la capacidad de dar seguimiento a todo los procesos.' );
+INSERT INTO  ROL VALUES ('Admin Organización','El administrador de la organizacion se encarga de gestionar la organización a la cual esta asociado, actualizando agregando y descartando información correspondiente.');
+INSERT INTO  ROL VALUES ('Admin Dojo','El administrador del dojo es el encargado de llevar un seguimiento y tener al día la información relevante con respecto al dojo asociado.');
+INSERT INTO  ROL VALUES ('Entrenador','El entrenador lleva un seguimiento de los atletas y los eventos realizados en el dojo.');
+INSERT INTO  ROL VALUES ('Atleta','El atleta es la persona en formación que recibe clases en un dojo particular.');
+INSERT INTO  ROL VALUES ('Representante','El representante como su nombre lo indica es el encargado del atleta menor, con lo cual puede dar seguimiento a las actividades realizadas por el menor.');
+
+INSERT INTO PERSONA_ROL VALUES(CONVERT (date, GETDATE()),2,3);
+INSERT INTO PERSONA_ROL VALUES(CONVERT (date, GETDATE()),2,5);
+INSERT INTO PERSONA_ROL VALUES(CONVERT (date, GETDATE()),1,2);
+
+create procedure M1_Restablecer
+@id_usuario [int],
+@clave [varchar](100)
+as
+begin
+	Update PERSONA set per_clave=@clave
+	where per_id=@id_usuario
+	end;
+
+INSERT INTO dbo.PERSONA (
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario
+) 
+VALUES (
+    'Eduardo',
+    'Sanchez Quintero',
+    'Venezolano',
+    'Coco',
+    '2da. Avenida de La Lagunita. Quinta Los Querubines.',
+    'M',
+    'O-',
+    '1968-03-05',
+    1,
+    88,
+    1.78,
+    'usuario01'
+);
 
 
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(1,'admin@hotmail.com','1234Admin','admin');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(2,'usuario2@hotmail.com','12345','usuario2');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(3,'usuario3@hotmail.com','1233','usuario3');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(4,'usuario_4@hotmail.com','1232','usuario4');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(5,'usuario_55@hotmail.com','12346','usuario5');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(6,'usuario33@hotmail.com','12378','usuario6');
-INSERT INTO USUARIO(USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(7,'usuario23@hotmail.com','12332','usuario7');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(8,'usuario54@gmail.com','12323','usuario8');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(9,'usuario67@gmail.com','1344Radio','usuario9');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(10,'usuario31@gmail.com','12343Television','usuario10');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(11,'usuario90@gmail.com','122Lavamano','usuario11');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(12,'usuario9@gmail.com','1Chao','usuario12');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(13,'usuario95@gmail.com','14Color','usuario13');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(14,'usuario95_@gmail.com','4Camisa','usuario14');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(15,'usuario_99@gmail.com','24Caiman','usuario15');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(16,'usuario-33@gmail.com','34Guitarra','usuario16');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(17,'usuario-21@gmail.com','2Loro','usuario17');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(18,'usuario-56@gmail.com','3Gato','usuario18');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(19,'usuario-32@hotmail.es','04Perro','usuario19');
-INSERT INTO USUARIO (USUARIO_ID,CORREO,"CONTRASEÑA",CUENTA) VALUES(20,'usuario-1@yahoo.com','24Hola','usuario20');
+INSERT INTO dbo.PERSONA (
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario
+) 
+VALUES (
+    'Alejandro',
+    'Perez',
+    'Venezolano',
+    'Coco',
+    '2da. Avenida de La Lagunita. Quinta Los Querubines.',
+    'M',
+    'O-',
+    '1968-03-05',
+    1,
+    88,
+    1.78,
+    'usuario02'
+);
 
-INSERT INTO  ROL VALUES (1,'Admin');
 
-INSERT INTO  ROL VALUES (2,'Admin Organización');
-INSERT INTO  ROL VALUES (3,'Admin Dojo');
-INSERT INTO  ROL VALUES (4,'Entrenador');
-INSERT INTO  ROL VALUES (5,'Atleta');
-INSERT INTO  ROL VALUES (6,'Representante');
+--------------------Esto no esta bien aun -----------
 
 INSERT INTO USUARIO_ROL VALUES(TO_DATE('2015/01/04','YYYY/MM/DD'),1,1);
 INSERT INTO USUARIO_ROL VALUES(TO_DATE('2015/02/03','YYYY/MM/DD'),2,2);

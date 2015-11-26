@@ -18,7 +18,8 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+    per_nombre_usuario
 ) 
 VALUES (
     'Eduardo',
@@ -31,7 +32,8 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'usuario01'
 );
 
 execute M1_Restablecer

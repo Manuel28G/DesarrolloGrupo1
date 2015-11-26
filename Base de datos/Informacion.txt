@@ -374,4 +374,5 @@ SELECT rol_id from ROL where rol_nombre='Admin Sistema';
 SELECT rol_id from ROL where rol_nombre='Admin Organización';
 SELECT rol_id from ROL where rol_nombre='Admin Dojo';
 SELECT rol_id from ROL where rol_nombre='Entrenador';
+SELECT rol_id from ROL where rol_nombre='Atleta';
 SELECT rol_id from ROL where rol_nombre='Representante';

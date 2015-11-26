@@ -1,4 +1,4 @@
-arreglos a la BD
+﻿arreglos a la BD
 
 ROL
  rol_id     INTEGER IDENTITY(1,1) NOT NULL,
@@ -36,7 +36,7 @@ INSERT INTO dbo.PERSONA (
     per_peso,
     per_estatura,
 	per_nombre_usuario,
-	per_clave,
+	per_clave
 ) 
 VALUES (
     'CEDULA-N',
@@ -124,7 +124,7 @@ INSERT INTO dbo.PERSONA (
     per_peso,
     per_estatura,
 	per_nombre_usuario,
-	per_clave,
+	per_clave
 ) 
 VALUES (
     'CEDULA-N',
@@ -364,7 +364,69 @@ SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio',
 SELECT rol_id from ROL where rol_nombre='Admin Dojo'
 );
 
+-------------UsuariosPruebaManuel-------------
+INSERT INTO dbo.PERSONA (
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+	per_clave
+) 
+VALUES (
+    'Eduardo',
+    'Sanchez Quintero',
+    'Venezolano',
+    'Coco',
+    '2da. Avenida de La Lagunita. Quinta Los Querubines.',
+    'M',
+    'O-',
+    '1968-03-05',
+    1,
+    88,
+    1.78,
+    'usuario04',
+	'12345'
+);
 
+
+INSERT INTO dbo.PERSONA (
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+	per_clave
+) 
+VALUES (
+    'Alejandro',
+    'Perez',
+    'Venezolano',
+    'Coco',
+    '2da. Avenida de La Lagunita. Quinta Los Querubines.',
+    'M',
+    'O-',
+    '1968-03-05',
+    1,
+    88,
+    1.78,
+    'usuario03',
+	'12345'
+);
 
 
 ----------para optener los ID de los roles-------

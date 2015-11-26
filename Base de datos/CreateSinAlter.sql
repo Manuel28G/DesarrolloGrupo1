@@ -803,6 +803,7 @@ CREATE
   (
     rol_id     INTEGER NOT NULL ,
     rol_nombre VARCHAR (150) NOT NULL ,
+    rol_descripcion varchar(200) NOT NULL,
     CONSTRAINT ROL_PK PRIMARY KEY CLUSTERED (rol_id)
 WITH
   (

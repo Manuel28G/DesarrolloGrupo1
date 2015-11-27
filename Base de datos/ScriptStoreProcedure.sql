@@ -37,11 +37,10 @@ CREATE procedure M2_ConsultarRolesUsuario
 as
 	begin
 		select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion,roles.rol_descripcion as descripcion
-		from ROL roles , PERSONA pers, PERSONA_ROL perol
-		where pers.per_id = perol.PERSONA_per_id AND perol.ROL_rol_id = roles.rol_id AND pers.per_id = CONVERT(INT,@id_usuario)
+		from ROL roles , PERSONA_ROL perol
+		where  perol.ROL_rol_id = roles.rol_id AND perol.PERSONA_per_id = CONVERT(INT,@id_usuario)
 	end;
-	go
-
+GO
 ------------------PROCEDURE RESTABLECER CONTRASENA ------------------
 CREATE procedure M1_RestablecerContrasena
 	@id_usuario [int],

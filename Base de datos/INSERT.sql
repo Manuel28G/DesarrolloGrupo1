@@ -77,6 +77,14 @@ VALUES (
     'usuario02'
 );
 
+	insert into EMAIL values('correo1@gmail.com',1,5);
+	insert into EMAIL values('correo2@gmail.com',0,5);
+	insert into EMAIL values('corre3o@gmail.com',0,5);
+	insert into EMAIL values('correo2@gmail.com',1,6);
+	insert into EMAIL values('correo1@gmail.com',0,6);
+	insert into EMAIL values('correo@gmail.com',0,6);
+	insert into EMAIL values('correo1@gmail.com',1,7);
+
 
 --------------------Esto no esta bien aun -----------
 

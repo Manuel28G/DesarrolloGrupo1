@@ -43,3 +43,14 @@ as
 		WHERE per_id = @id_usuario
 	end;
 	go
+
+-----------------PROCEDURE VALIDAR CORREO--------------------------
+CREATE procedure M1_ValidarCorreo
+@correo_usuario [varchar](25)
+as
+	begin
+		select  PERSONA_per_id  as correo_usuario
+		from EMAIL
+		where ema_email= @correo_usuario and ema_principal=1
+	end;
+	go

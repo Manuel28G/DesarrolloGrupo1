@@ -1191,11 +1191,10 @@ CREATE procedure M1_ValidarCorreo
 as
 	begin
 		select  PERSONA_per_id  as correo_usuario
-		from EMAIL em, PERSONA
+		from EMAIL
 		where ema_email= @correo_usuario and ema_principal=1
 	end;
-	go
-
+go
 
 -----------------------------------STORED PROCEDURES M2--------------------------------------------------------
 

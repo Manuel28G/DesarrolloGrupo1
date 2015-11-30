@@ -1147,7 +1147,7 @@ as
 
  ----------------------------------STORED PROCEDURES M1-------------------------------------
 
-------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
+------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR USERNAME--------*Nuevo*----
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
 	@nombre_usuario [varchar](25)
 as
@@ -1158,6 +1158,7 @@ as
 		where pers.per_nombre_usuario = @nombre_usuario
 	end;
 	go
+
 
 
 ------------------PROCEDURE CONSULTA ROLES DE USUARIO POR NOMBRE------------------
@@ -1237,6 +1238,20 @@ as
 	end;
 	go
 
+
+------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR ID--------*NUEVO*----
+
+
+CREATE procedure M2_ConsultarNombreUsuarioContrasena_ID
+	@id_usuario [int]
+as
+	begin
+		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario,pers.per_imagen as imagen,
+		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
+		from PERSONA pers
+		where pers.per_id = @id_usuario
+	end;
+	go
 
 
 	INSERT INTO dbo.PERSONA (

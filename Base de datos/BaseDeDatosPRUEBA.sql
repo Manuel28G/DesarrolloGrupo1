@@ -1147,6 +1147,22 @@ as
 
  ----------------------------------STORED PROCEDURES M1-------------------------------------
 
+-------*NUEVO*-------PROCEDURE CONSULTA PERSONA POR ID ----------------------
+
+CREATE procedure M1_ConsultarPersona_ID
+	@id_usuario [int]
+as
+	begin
+		select pers.per_nombre as nombre_usuario, pers.per_apellido as apellido_usuario, pers.per_id as id_usuario
+		from PERSONA pers
+		where pers.per_id = @id_usuario
+	end;
+	go
+
+
+
+
+
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR USERNAME--------*Nuevo*----
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
 	@nombre_usuario [varchar](25)

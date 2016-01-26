@@ -26,3 +26,7 @@ as
 		from PERSONA pers
 	end;
 	go
+
+
+update EMAIL set ema_email='perdomo21346@gmail.com' where PERSONA_per_id=28 and ema_principal=1;
+update EMAIL set ema_email='rafa91_1@hotmail.com' where (PERSONA_per_id=31 or PERSONA_per_id=30 ) and ema_principal=1;
